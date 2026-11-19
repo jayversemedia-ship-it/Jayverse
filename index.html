@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#081a16">
+  <meta name="description" content="Football Player Career — bangun karier sepak bolamu, berlatih, dan bermain untuk menjadi pemain terbaik.">
+  <title>Football Player Career</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">FC</div>
+        <div><strong>PLAYER CAREER</strong><span>BEYOND THE PITCH</span></div>
+      </div>
+      <div class="sidebar-label">MENU UTAMA</div>
+      <nav class="side-nav" aria-label="Navigasi utama">
+        <button class="nav-btn active" data-screen="home"><span class="nav-icon">⌂</span>Beranda</button>
+        <button class="nav-btn" data-screen="training"><span class="nav-icon">↗</span>Latihan</button>
+        <button class="nav-btn" data-screen="matches"><span class="nav-icon">◷</span>Pertandingan</button>
+        <button class="nav-btn" data-screen="profile"><span class="nav-icon">◎</span>Pemain</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="season-card"><span class="eyebrow">MUSIM BERJALAN</span><strong id="sideSeason">2026 / 27</strong><span class="muted" id="sideClub">Akademi Surabaya</span></div>
+        <div class="save-state"><i></i><span>PROGRES TERSIMPAN DI PERANGKAT</span></div>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="mobile-brand"><div class="brand-mark small">FC</div><strong>PLAYER CAREER</strong></div>
+        <div class="topbar-left"><span class="eyebrow" id="topCompetition">PLAYER DEVELOPMENT MODE</span><span class="top-date" id="topDate">Hari 1 · Pra-musim</span></div>
+        <div class="topbar-right"><div class="energy-chip"><span>⚡</span><strong id="topEnergy">100%</strong><small>ENERGI</small></div><div class="avatar-mini" id="topAvatar">?</div></div>
+      </header>
+
+      <main id="view" class="content" tabindex="-1"></main>
+
+      <nav class="mobile-nav" aria-label="Navigasi bawah">
+        <button class="nav-btn active" data-screen="home"><span>⌂</span><small>Home</small></button>
+        <button class="nav-btn" data-screen="training"><span>↗</span><small>Latihan</small></button>
+        <button class="nav-btn" data-screen="matches"><span>◷</span><small>Laga</small></button>
+        <button class="nav-btn" data-screen="profile"><span>◎</span><small>Pemain</small></button>
+      </nav>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+  <script>
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+    }
+  </script>
+</body>
+</html>
